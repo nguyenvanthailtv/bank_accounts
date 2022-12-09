@@ -11,7 +11,7 @@
             return $conn;
 
         } catch(PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
+            echo "Message: Database connection failed!";
         }
 
 

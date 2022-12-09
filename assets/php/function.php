@@ -22,7 +22,7 @@
             $stmt->execute();
             $conn = null;
         }catch(Exception $e){
-            echo "Error: " . $e->getMessage();
+            echo "Message: add account failed " ;
         }
     }
 
@@ -47,7 +47,7 @@
             $stmt->execute();
             $conn = null;
         } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+            echo "Message: update account failed " ;
         }
     }
 
@@ -62,7 +62,7 @@
             $stmt->execute();
             $conn = null;
         } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+            echo "Message: delete account failed " ;
         }
     }
 
@@ -84,7 +84,7 @@
             $stmt->execute();
             $conn = null;
         } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+            echo "Message: add user failed " ;
         }
     }
 
@@ -105,7 +105,7 @@
             $stmt->execute();
             $conn = null;
         } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+            echo "Message: update user failed " ;
         }
     }
 
@@ -117,7 +117,7 @@
             $stmt->execute();
             $conn=null;
         } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+            echo "Message: delete user failed " ;
         }
     }
 
@@ -130,7 +130,7 @@
             return $arr;
         }
         catch(Exception $e){
-            echo "Error: " . $e->getMessage();
+            echo "Message: An error occurred. Please try again later! " ;
         }
 
     }

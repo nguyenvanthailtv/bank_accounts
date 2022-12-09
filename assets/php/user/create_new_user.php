@@ -25,7 +25,7 @@
             }
         }
         catch(Exception $e){
-            echo "Error: ".$e->getMessage();
+            echo "Message: An error occurred. Please try again later! " ;
             echo "<pre>";
         }
     }
