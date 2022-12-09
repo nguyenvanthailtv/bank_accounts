@@ -1,0 +1,23 @@
+*{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+	font-size: 62.5%;
+	line-height: 1.6rem;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    
+}
+
+html,body{
+    height:100%;
+    width: 100%;
+}
+
+@import './base/grid';
+@import './abstracts/variables';
+@import './pages/login';
+@import './pages/index';

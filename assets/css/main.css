@@ -1,0 +1,1385 @@
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.gap-0 > * {
+  padding: 0;
+}
+
+.gap-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.gap-1 > * {
+  padding: 10px;
+}
+
+.gap-1 {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.gap-2 > * {
+  padding: 20px;
+}
+
+.gap-2 {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.gap-3 > * {
+  padding: 30px;
+}
+
+.gap-3 {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+.justify-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+@media (min-width: 0) and (max-width: 480px) {
+  .col-1-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 8.3333333333%;
+  }
+  .col-2-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 16.6666666667%;
+  }
+  .col-3-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 25%;
+  }
+  .col-4-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 33.3333333333%;
+  }
+  .col-5-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 41.6666666667%;
+  }
+  .col-6-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 50%;
+  }
+  .col-7-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 58.3333333333%;
+  }
+  .col-8-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 66.6666666667%;
+  }
+  .col-9-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 75%;
+  }
+  .col-10-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 83.3333333333%;
+  }
+  .col-11-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 91.6666666667%;
+  }
+  .col-12-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 480px) and (max-width: 720px) {
+  .col-1-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 8.3333333333%;
+  }
+  .col-2-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 16.6666666667%;
+  }
+  .col-3-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 25%;
+  }
+  .col-4-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 33.3333333333%;
+  }
+  .col-5-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 41.6666666667%;
+  }
+  .col-6-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 50%;
+  }
+  .col-7-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 58.3333333333%;
+  }
+  .col-8-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 66.6666666667%;
+  }
+  .col-9-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 75%;
+  }
+  .col-10-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 83.3333333333%;
+  }
+  .col-11-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 91.6666666667%;
+  }
+  .col-12-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 720px) and (max-width: 960px) {
+  .col-1-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 8.3333333333%;
+  }
+  .col-2-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 16.6666666667%;
+  }
+  .col-3-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 25%;
+  }
+  .col-4-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 33.3333333333%;
+  }
+  .col-5-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 41.6666666667%;
+  }
+  .col-6-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 50%;
+  }
+  .col-7-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 58.3333333333%;
+  }
+  .col-8-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 66.6666666667%;
+  }
+  .col-9-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 75%;
+  }
+  .col-10-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 83.3333333333%;
+  }
+  .col-11-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 91.6666666667%;
+  }
+  .col-12-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 960px) and (max-width: 1200px) {
+  .col-1-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 8.3333333333%;
+  }
+  .col-2-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 16.6666666667%;
+  }
+  .col-3-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 25%;
+  }
+  .col-4-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 33.3333333333%;
+  }
+  .col-5-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 41.6666666667%;
+  }
+  .col-6-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 50%;
+  }
+  .col-7-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 58.3333333333%;
+  }
+  .col-8-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 66.6666666667%;
+  }
+  .col-9-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 75%;
+  }
+  .col-10-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 83.3333333333%;
+  }
+  .col-11-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 91.6666666667%;
+  }
+  .col-12-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .col-1-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 8.3333333333%;
+  }
+  .col-2-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 16.6666666667%;
+  }
+  .col-3-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 25%;
+  }
+  .col-4-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 33.3333333333%;
+  }
+  .col-5-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 41.6666666667%;
+  }
+  .col-6-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 50%;
+  }
+  .col-7-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 58.3333333333%;
+  }
+  .col-8-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 66.6666666667%;
+  }
+  .col-9-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 75%;
+  }
+  .col-10-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 83.3333333333%;
+  }
+  .col-11-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 91.6666666667%;
+  }
+  .col-12-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 0) and (max-width: 480px) {
+  .col-1-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 8.3333333333%;
+  }
+  .col-2-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 16.6666666667%;
+  }
+  .col-3-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 25%;
+  }
+  .col-4-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 33.3333333333%;
+  }
+  .col-5-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 41.6666666667%;
+  }
+  .col-6-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 50%;
+  }
+  .col-7-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 58.3333333333%;
+  }
+  .col-8-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 66.6666666667%;
+  }
+  .col-9-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 75%;
+  }
+  .col-10-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 83.3333333333%;
+  }
+  .col-11-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 91.6666666667%;
+  }
+  .col-12-o-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 100%;
+  }
+}
+@media (min-width: 480px) and (max-width: 720px) {
+  .col-1-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 8.3333333333%;
+  }
+  .col-2-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 16.6666666667%;
+  }
+  .col-3-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 25%;
+  }
+  .col-4-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 33.3333333333%;
+  }
+  .col-5-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 41.6666666667%;
+  }
+  .col-6-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 50%;
+  }
+  .col-7-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 58.3333333333%;
+  }
+  .col-8-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 66.6666666667%;
+  }
+  .col-9-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 75%;
+  }
+  .col-10-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 83.3333333333%;
+  }
+  .col-11-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 91.6666666667%;
+  }
+  .col-12-o-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 100%;
+  }
+}
+@media (min-width: 720px) and (max-width: 960px) {
+  .col-1-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 8.3333333333%;
+  }
+  .col-2-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 16.6666666667%;
+  }
+  .col-3-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 25%;
+  }
+  .col-4-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 33.3333333333%;
+  }
+  .col-5-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 41.6666666667%;
+  }
+  .col-6-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 50%;
+  }
+  .col-7-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 58.3333333333%;
+  }
+  .col-8-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 66.6666666667%;
+  }
+  .col-9-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 75%;
+  }
+  .col-10-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 83.3333333333%;
+  }
+  .col-11-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 91.6666666667%;
+  }
+  .col-12-o-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 100%;
+  }
+}
+@media (min-width: 960px) and (max-width: 1200px) {
+  .col-1-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 8.3333333333%;
+  }
+  .col-2-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 16.6666666667%;
+  }
+  .col-3-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 25%;
+  }
+  .col-4-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 33.3333333333%;
+  }
+  .col-5-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 41.6666666667%;
+  }
+  .col-6-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 50%;
+  }
+  .col-7-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 58.3333333333%;
+  }
+  .col-8-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 66.6666666667%;
+  }
+  .col-9-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 75%;
+  }
+  .col-10-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 83.3333333333%;
+  }
+  .col-11-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 91.6666666667%;
+  }
+  .col-12-o-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .col-1-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 8.3333333333%;
+  }
+  .col-2-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 16.6666666667%;
+  }
+  .col-3-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 25%;
+  }
+  .col-4-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 33.3333333333%;
+  }
+  .col-5-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 41.6666666667%;
+  }
+  .col-6-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 50%;
+  }
+  .col-7-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 58.3333333333%;
+  }
+  .col-8-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 66.6666666667%;
+  }
+  .col-9-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 75%;
+  }
+  .col-10-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 83.3333333333%;
+  }
+  .col-11-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 91.6666666667%;
+  }
+  .col-12-o-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    margin-left: 100%;
+  }
+}
+.login__nav {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  color: #000;
+}
+.login__nav .login__wrapper {
+  text-align: center;
+}
+.login__nav .login__wrapper h2 {
+  font-size: 2.5rem;
+  line-height: 150%;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  font-weight: 500;
+  color: #03a9f4;
+}
+.login__nav .login__wrapper .login__content {
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(3, 169, 244, 0.2);
+  text-align: left;
+  padding: 30px 20px;
+}
+.login__nav .login__wrapper .login__content .login__email, .login__nav .login__wrapper .login__content .login__password {
+  padding: 10px 0;
+}
+.login__nav .login__wrapper .login__content .login__email__text, .login__nav .login__wrapper .login__content .login__password__text {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  line-height: 150%;
+  font-weight: 500;
+  color: #03a9f4;
+  padding-left: 5px;
+}
+.login__nav .login__wrapper .login__content .login__email__input, .login__nav .login__wrapper .login__content .login__password__input {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 1.3rem;
+  margin: 5px 0;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: 1.5px solid rgba(3, 169, 244, 0.35);
+  border-radius: 5px;
+  line-height: 150%;
+  color: #3D5656;
+}
+.login__nav .login__wrapper .login__content .login__email__input::placeholder, .login__nav .login__wrapper .login__content .login__password__input::placeholder {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+.login__nav .login__wrapper .login__content .login__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+  font-size: 1.5rem;
+  line-height: 130%;
+}
+.login__nav .login__wrapper .login__content .login__btn button {
+  padding: 15px 50px;
+  letter-spacing: 1.5px;
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+  color: #FFFFFF;
+  background-color: #03a9f4;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.login__nav .login__wrapper .login__content .login__btn button:hover {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+.login__nav .login__wrapper .login__content p.login-err {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  color: red;
+  padding-left: 10px;
+}
+
+.header__wrapper {
+  width: 100%;
+  height: 40px;
+  background-color: #03a9f4;
+}
+
+.wrapper {
+  background-color: #f9f9f9;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+}
+.wrapper .side-bars {
+  width: 20%;
+  display: block;
+  background-color: rgba(54, 57, 67, 0.9);
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.6s linear;
+  transform: translateX(0);
+  opacity: 1;
+}
+.wrapper .side-bars__roles {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+}
+.wrapper .side-bars__roles__logo {
+  font-size: 2rem;
+  padding: 8px 11px 8px 9px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(54, 57, 67, 0.9);
+  border-radius: 50%;
+  line-height: 100%;
+  font-family: "Pacifico";
+}
+.wrapper .side-bars__roles .type-of-roles {
+  font-size: 1.5rem;
+  padding: 0 10px;
+  letter-spacing: 1px;
+}
+.wrapper .side-bars__username {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.wrapper .side-bars__username i {
+  font-size: 2rem;
+  padding: 8px 9px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(54, 57, 67, 0.9);
+  border-radius: 50%;
+}
+.wrapper .side-bars__username p {
+  font-size: 1.5rem;
+  padding: 0 10px;
+  letter-spacing: 1px;
+}
+.wrapper .side-bars__content {
+  display: flex;
+  padding: 15px 30px;
+}
+.wrapper .side-bars__content .list-content {
+  width: 100%;
+}
+.wrapper .side-bars__content .list-content .list-item {
+  list-style: none;
+  width: 100%;
+  padding: 10px;
+}
+.wrapper .side-bars__content .list-content .list-item__link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  justify-content: space-between;
+}
+.wrapper .side-bars__content .list-content .list-item__link__wrapper i {
+  font-size: 2rem;
+}
+.wrapper .side-bars__content .list-content .list-item__link__wrapper span {
+  font-size: 1.5rem;
+  padding: 0 10px;
+  letter-spacing: 1px;
+}
+.wrapper .side-bars__content .list-content .list-item__link .arrow {
+  font-size: 1.1rem;
+  transform: rotate(270deg);
+}
+.wrapper .side-bars__content .list-content .list-item__link:hover {
+  color: rgba(3, 169, 244, 0.8);
+}
+.wrapper .side-bars__content .list-content .list-item.active > .list-item__link {
+  color: rgba(3, 169, 244, 0.8);
+}
+.wrapper .account-management,
+.wrapper .user-management {
+  width: 80%;
+}
+.wrapper .account-management .content,
+.wrapper .user-management .content {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: all 0.6s linear;
+  background-color: #f5f5fb;
+}
+.wrapper .account-management .content .header,
+.wrapper .user-management .content .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.wrapper .account-management .content .header-user,
+.wrapper .user-management .content .header-user {
+  height: 50px;
+}
+.wrapper .account-management .content .header__container,
+.wrapper .user-management .content .header__container {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  min-width: 300px;
+  max-width: 350px;
+}
+.wrapper .account-management .content .header__container form,
+.wrapper .user-management .content .header__container form {
+  width: 100%;
+}
+.wrapper .account-management .content .header__container form .header__input,
+.wrapper .user-management .content .header__container form .header__input {
+  background-color: #ececf0;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  flex: 1;
+  margin-left: 10px;
+}
+.wrapper .account-management .content .header__container form .header__input input,
+.wrapper .user-management .content .header__container form .header__input input {
+  font-size: 1.3rem;
+  line-height: 100%;
+  letter-spacing: 1px;
+  color: #3D5656;
+  outline: none;
+  border: none;
+  background-color: #ececf0;
+  padding: 5px 10px;
+  flex: 1;
+}
+.wrapper .account-management .content .header__container form .header__input::placeholder,
+.wrapper .user-management .content .header__container form .header__input::placeholder {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+.wrapper .account-management .content .header i,
+.wrapper .user-management .content .header i {
+  font-size: 2rem;
+  color: #363943;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.wrapper .account-management .content__container,
+.wrapper .user-management .content__container {
+  padding: 20px;
+}
+.wrapper .account-management .content__container .title,
+.wrapper .user-management .content__container .title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper .account-management .content__container .title h3,
+.wrapper .user-management .content__container .title h3 {
+  font-size: 2rem;
+  color: #363943;
+  letter-spacing: 1px;
+}
+.wrapper .account-management .content__container .title .create-new, .wrapper .account-management .content__container .title .create-new-user,
+.wrapper .user-management .content__container .title .create-new,
+.wrapper .user-management .content__container .title .create-new-user {
+  display: flex;
+  padding: 12px;
+  background-color: #03a9f4;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+.wrapper .account-management .content__container .title .create-new i, .wrapper .account-management .content__container .title .create-new-user i,
+.wrapper .user-management .content__container .title .create-new i,
+.wrapper .user-management .content__container .title .create-new-user i {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  color: #FFFFFF;
+}
+.wrapper .account-management .content__container .title .create-new p, .wrapper .account-management .content__container .title .create-new-user p,
+.wrapper .user-management .content__container .title .create-new p,
+.wrapper .user-management .content__container .title .create-new-user p {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+.wrapper .account-management .content__container .title .create-new:hover, .wrapper .account-management .content__container .title .create-new-user:hover,
+.wrapper .user-management .content__container .title .create-new:hover,
+.wrapper .user-management .content__container .title .create-new-user:hover {
+  transform: scale(0.95);
+}
+.wrapper .account-management .content__container table,
+.wrapper .user-management .content__container table {
+  table-layout: fixed;
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+.wrapper .account-management .content__container table tr th,
+.wrapper .user-management .content__container table tr th {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  color: #03a9f4;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+}
+.wrapper .account-management .content__container table tr td,
+.wrapper .user-management .content__container table tr td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 5px;
+  color: #3D5656;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: default;
+}
+.wrapper .account-management .content__container table tr td a,
+.wrapper .user-management .content__container table tr td a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  text-align: center;
+}
+.wrapper .account-management .content__container table tr td a i,
+.wrapper .user-management .content__container table tr td a i {
+  font-size: 1.6rem;
+  color: #03a9f4;
+}
+.wrapper .account-management .content__container table tr .id, .wrapper .account-management .content__container table tr .age,
+.wrapper .user-management .content__container table tr .id,
+.wrapper .user-management .content__container table tr .age {
+  width: 5%;
+  text-align: center;
+}
+.wrapper .account-management .content__container table tr .balance, .wrapper .account-management .content__container table tr .gender,
+.wrapper .user-management .content__container table tr .balance,
+.wrapper .user-management .content__container table tr .gender {
+  width: 7%;
+}
+.wrapper .account-management .content__container table tr .fullname,
+.wrapper .user-management .content__container table tr .fullname {
+  width: 14%;
+}
+.wrapper .account-management .content__container table tr .address,
+.wrapper .user-management .content__container table tr .address {
+  width: 24%;
+}
+.wrapper .account-management .content__container table tr .emloyer,
+.wrapper .user-management .content__container table tr .emloyer {
+  width: 10%;
+}
+.wrapper .account-management .content__container table tr .email,
+.wrapper .user-management .content__container table tr .email {
+  width: 20%;
+}
+.wrapper .account-management .content__container table tr .username, .wrapper .account-management .content__container table tr .action, .wrapper .account-management .content__container table tr .roles, .wrapper .account-management .content__container table tr .phone,
+.wrapper .user-management .content__container table tr .username,
+.wrapper .user-management .content__container table tr .action,
+.wrapper .user-management .content__container table tr .roles,
+.wrapper .user-management .content__container table tr .phone {
+  width: 10%;
+}
+.wrapper .account-management .content__container table tr .country,
+.wrapper .user-management .content__container table tr .country {
+  width: 13%;
+}
+.wrapper .account-management .content__container table .row-item:hover,
+.wrapper .user-management .content__container table .row-item:hover {
+  background-color: rgba(3, 169, 244, 0.1);
+}
+.wrapper .account-management .content__container .paging,
+.wrapper .user-management .content__container .paging {
+  width: 100%;
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+}
+.wrapper .account-management .content__container .paging .page,
+.wrapper .user-management .content__container .paging .page {
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 7px 10px;
+  color: #03a9f4;
+  border: 1px solid rgba(3, 169, 244, 0.25);
+  cursor: pointer;
+}
+.wrapper .account-management .content__container .paging .page i,
+.wrapper .user-management .content__container .paging .page i {
+  font-size: 1.5rem;
+}
+.wrapper .account-management .content__container .paging .page.active,
+.wrapper .user-management .content__container .paging .page.active {
+  background-color: #03a9f4;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  transform: scale(1.1);
+}
+.wrapper .account-management .account-impacts, .wrapper .account-management .user-impacts,
+.wrapper .user-management .account-impacts,
+.wrapper .user-management .user-impacts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  visibility: hidden;
+  transform: translateX(100%);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  z-index: 5;
+}
+.wrapper .account-management .account-impacts .insert-form, .wrapper .account-management .user-impacts .insert-form,
+.wrapper .user-management .account-impacts .insert-form,
+.wrapper .user-management .user-impacts .insert-form {
+  width: 800px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 25px;
+  transform: translateY(-100%);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+}
+.wrapper .account-management .account-impacts .insert-form.user, .wrapper .account-management .user-impacts .insert-form.user,
+.wrapper .user-management .account-impacts .insert-form.user,
+.wrapper .user-management .user-impacts .insert-form.user {
+  width: 400px;
+}
+.wrapper .account-management .account-impacts .insert-form h2, .wrapper .account-management .user-impacts .insert-form h2,
+.wrapper .user-management .account-impacts .insert-form h2,
+.wrapper .user-management .user-impacts .insert-form h2 {
+  font-size: 3rem;
+  line-height: 130%;
+  padding: 20px 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper, .wrapper .account-management .user-impacts .insert-form__wrapper,
+.wrapper .user-management .account-impacts .insert-form__wrapper,
+.wrapper .user-management .user-impacts .insert-form__wrapper {
+  width: 100%;
+  display: flex;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content {
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content.user, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content.user,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content.user,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content.user {
+  width: 100%;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input {
+  margin: 15px 0;
+  position: relative;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input i, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input i,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input i,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input i {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  font-size: 1.8rem;
+  transform: translate(0, -50%);
+  color: #03a9f4;
+  transition: all 0.5s;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input i.active, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input i.active,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input i.active,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input i.active {
+  transform: translate(0, -50%) rotate(180deg);
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label-p, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label-p,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label-p,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label-p {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.4s;
+  pointer-events: none;
+  background-color: #FFFFFF;
+  padding: 0 5px;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .account-err, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .user_err, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .account-err, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .user_err,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .account-err,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .user_err,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .account-err,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .user_err {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  color: red !important;
+  padding-left: 10px;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label {
+  display: block;
+  height: 42px;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label.active ~ P, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label.active ~ P,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label.active ~ P,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .label.active ~ P {
+  font-size: 1.3rem;
+  color: #03a9f4;
+  top: -12px;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label {
+  width: 100%;
+  padding: 10px 18px;
+  border: 1px solid rgba(3, 169, 244, 0.35);
+  outline: none;
+  border-radius: 6px;
+  color: #3D5656;
+  line-height: 150%;
+  display: block;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid {
+  background-color: #FFFFFF;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus ~ p, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid ~ p, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus ~ p, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid ~ p, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus ~ p, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid ~ p, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus ~ p, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid ~ p,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus ~ p,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid ~ p,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus ~ p,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid ~ p,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus ~ p,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid ~ p,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus ~ p,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid ~ p {
+  font-size: 1.3rem;
+  color: #03a9f4;
+  top: -10px;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus ~ i, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid ~ i, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus ~ i, .wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid ~ i, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus ~ i, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid ~ i, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus ~ i, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid ~ i,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus ~ i,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid ~ i,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus ~ i,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid ~ i,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:focus ~ i,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input input:valid ~ i,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:focus ~ i,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input label:valid ~ i {
+  transform: translate(0, -50%) rotate(180deg);
+  background-color: transparent;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper {
+  position: absolute;
+  top: calc(100% + 2px);
+  width: 100%;
+  z-index: 5;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  display: none;
+  cursor: pointer;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list li, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list li,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list li,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list li {
+  padding: 8px 15px;
+  list-style: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #3D5656;
+}
+.wrapper .account-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list li:hover, .wrapper .account-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list li:hover,
+.wrapper .user-management .account-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list li:hover,
+.wrapper .user-management .user-impacts .insert-form__wrapper .insert-form__content .insert-form__input .list-wrapper .list li:hover {
+  background-color: rgba(3, 169, 244, 0.1);
+}
+.wrapper .account-management .account-impacts .insert-form__btn, .wrapper .account-management .user-impacts .insert-form__btn,
+.wrapper .user-management .account-impacts .insert-form__btn,
+.wrapper .user-management .user-impacts .insert-form__btn {
+  width: 100%;
+  text-align: center;
+}
+.wrapper .account-management .account-impacts .insert-form__btn.user, .wrapper .account-management .user-impacts .insert-form__btn.user,
+.wrapper .user-management .account-impacts .insert-form__btn.user,
+.wrapper .user-management .user-impacts .insert-form__btn.user {
+  display: flex;
+  justify-content: space-around;
+}
+.wrapper .account-management .account-impacts .insert-form__btn .btn, .wrapper .account-management .user-impacts .insert-form__btn .btn,
+.wrapper .user-management .account-impacts .insert-form__btn .btn,
+.wrapper .user-management .user-impacts .insert-form__btn .btn {
+  padding: 15px 50px;
+  outline: none;
+  border-radius: 25px;
+  border: none;
+  letter-spacing: 3px;
+  font-size: 1.7rem;
+  margin: 0 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.wrapper .account-management .account-impacts .insert-form__btn .btn.user, .wrapper .account-management .user-impacts .insert-form__btn .btn.user,
+.wrapper .user-management .account-impacts .insert-form__btn .btn.user,
+.wrapper .user-management .user-impacts .insert-form__btn .btn.user {
+  padding: 14px 34px;
+  margin: 0;
+  font-size: 1.5rem;
+}
+.wrapper .account-management .account-impacts .insert-form__btn .btn--action, .wrapper .account-management .user-impacts .insert-form__btn .btn--action,
+.wrapper .user-management .account-impacts .insert-form__btn .btn--action,
+.wrapper .user-management .user-impacts .insert-form__btn .btn--action {
+  background-color: #03a9f4;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+.wrapper .account-management .account-impacts .insert-form__btn .btn--close, .wrapper .account-management .user-impacts .insert-form__btn .btn--close,
+.wrapper .user-management .account-impacts .insert-form__btn .btn--close,
+.wrapper .user-management .user-impacts .insert-form__btn .btn--close {
+  background-color: #FFFFFF;
+  color: #03a9f4;
+  border: 1px solid #03a9f4;
+}
+.wrapper .account-management .account-impacts .insert-form__btn .btn:hover, .wrapper .account-management .user-impacts .insert-form__btn .btn:hover,
+.wrapper .user-management .account-impacts .insert-form__btn .btn:hover,
+.wrapper .user-management .user-impacts .insert-form__btn .btn:hover {
+  opacity: 0.9;
+  transform: scale(0.95);
+}
+.wrapper .account-management .account-impacts.active, .wrapper .account-management .user-impacts.active,
+.wrapper .user-management .account-impacts.active,
+.wrapper .user-management .user-impacts.active {
+  visibility: inherit;
+  transform: translateX(0);
+}
+.wrapper .account-management .account-impacts.active .insert-form, .wrapper .account-management .user-impacts.active .insert-form,
+.wrapper .user-management .account-impacts.active .insert-form,
+.wrapper .user-management .user-impacts.active .insert-form {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*# sourceMappingURL=main.css.map */
