@@ -1,11 +1,7 @@
-
-
 .header__wrapper {
     width: 100%;
     height: 40px;
     background-color: $blue-color;
-
-    
 }
 
 .wrapper{
@@ -49,8 +45,6 @@
             align-items: center;
             padding: 15px;
             border-bottom: 1px solid rgba($white-color,0.15);
-
-
             i{
                 font-size: 2rem;
                 padding: 8px 9px;
@@ -84,7 +78,10 @@
                         align-items: center;
                         color: rgba($white-color,0.8);
                         justify-content: space-between;
-
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
 
                         &__wrapper{
                             i{
@@ -118,7 +115,8 @@
         }
     }
     .account-management,
-    .user-management{
+    .user-management,
+    .roles-management{
         width: 80%;
         .content{
             width: 100%;
@@ -136,7 +134,7 @@
                 background-color: $white-color;
                 border-bottom: 1px solid rgba($black-color,0.15);
 
-                &-user{
+                &-user, &-roles{
                     height: 50px;
                 }
         
@@ -174,8 +172,6 @@
                                 font-size: 1.3rem;
                                 letter-spacing: 1px;
                             }
-        
-                            
                         }
                     }
                 }
@@ -187,7 +183,6 @@
                     cursor: pointer;
                 }
             }
-    
     
             &__container{
                 padding: 20px;
@@ -204,7 +199,7 @@
                         letter-spacing: 1px;
                     }
                     
-                    .create-new,.create-new-user{
+                    .create-new,.create-new-user,.create-new-roles{
                         display: flex;
                         padding: 12px;
                         background-color: $blue-color;
@@ -228,15 +223,18 @@
                             transform: scale(0.95);
                         }
                     }
-                }
-                
+                }   
         
                 table{
                     table-layout: fixed;
                     width: 100%;
                     margin-top: 20px;
                     border-collapse:collapse ;
-        
+                    
+                    &.tb-roles{
+                        width: 60%;
+                    }
+
                     tr{
                         th{
                             border: 1px solid rgba($black-color,0.1);
@@ -244,8 +242,6 @@
                             color: $blue-color;
                             letter-spacing: 1px;
                             font-size: 1.3rem;
-            
-                            
                         }
                         td{
                             border: 1px solid rgba($black-color,0.1);
@@ -304,10 +300,16 @@
                         .country{
                             width: 13%;
                         }
-                        
-        
-                    
-                        
+
+                        // roles managenment
+                        .roles{
+                            &-id{
+                                width: 10%;
+                            }
+                            &-action{
+                                width: 20%;
+                            }
+                        }  
                     }
                     .row-item:hover{
                         background-color: rgba($blue-color,0.1);
@@ -339,13 +341,10 @@
                         }
                     }
                 }
-    
-                
             }
-            
         }
     
-        .account-impacts,.user-impacts{
+        .account-impacts,.user-impacts,.roles-impacts{
             position: fixed;
             top: 0;
             left: 0;
@@ -364,15 +363,17 @@
                 background-color: $white-color;
                 border-radius: 10px;
                 padding: 25px;
-                transform: translateY(-100%);
                 transition: all 0.5s ease;
                 position: relative;
+                transform: translateY(-100%);
                 overflow: hidden;
                 opacity: 0;
     
                 &.user{
                     width: 400px;
                 }
+
+
                 h2{
                     font-size: 3rem;
                     line-height: 130%;
@@ -384,6 +385,10 @@
                 &__wrapper{
                     width: 100%;
                     display: flex;
+
+                    &.roles{
+                        display: block;
+                    }
                     .insert-form__content{
                         width: 50%;
                         height: 100%;
@@ -391,10 +396,54 @@
                         font-size: 1.4rem;
                         letter-spacing: 1px;
 
-                        &.user{
+                        &.user, &.roles,&.permission{
                             width: 100%;
                         }
     
+                        &.roles{
+                            display: flex;
+
+                            .insert-form__input{
+                                flex: 1;
+                                margin: 15px 5px;
+                            }
+                        }
+
+                        &.permission{
+                            border-top: 1px solid rgba($blue-color,0.25);
+                            
+                            .per__{
+
+                                &headding{
+                                    font-size: 1.7rem;
+                                    color: $blue-color;
+                                    padding: 10px 0;
+                                }
+
+                                &label{
+                                    font-size: 1.6rem;
+                                    padding-top: 6px;
+                                }
+
+                                &checkbox{
+                                    display: flex;
+                                    justify-content: space-around;
+                                    padding: 15px;
+                                    font-size: 1.5rem;
+                                    letter-spacing: 1.5px;
+                                    border-bottom: 1px solid rgba($blue-color,0.1);
+
+                                    &-box{
+                                        display: flex;
+                                        align-items: center;
+                                        flex: 1;
+                                        input{
+                                            margin: 0 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         .insert-form__input{
                             margin: 15px 0;
                             position: relative;
@@ -442,8 +491,6 @@
                                         top: -12px;
                                     }
                                 }
-    
-                                
                             }
     
                             input,label{
@@ -474,8 +521,6 @@
                                 }
                             }
     
-                            
-    
                             .list-wrapper{
                                 position: absolute;
                                 top: calc(100% + 2px);
@@ -501,47 +546,8 @@
                                         }
                                     }
                                 }
-    
-                                // &.list-roles--active{
-                                //     display: block;
-                                // }
-    
                             }
-    
-                            // .list-wrapper{
-                            //     position: absolute;
-                            //     top: calc(100% + 2px);
-                            //     width: 100%;
-                            //     z-index: 5;
-                            //     background-color: $white-color;
-                            //     border: 1px solid  rgba($black-color,0.15);
-                            //     border-radius: 6px;
-                            //     display: none;
-                            //     cursor: pointer;
-                            //     ul{
-                            //         li{
-                            //             padding: 8px 15px;
-                            //             list-style: none;
-                            //             border-bottom: 1px solid rgba($black-color,0.1);
-                            //             color: $text-color;
-    
-                            //             &:hover{
-                            //                 background-color: rgba($blue-color,0.1);
-                            //             }
-                            //         }
-                            //     }
-    
-                            //     // &.list-roles--active{
-                            //     //     display: block;
-                            //     // }
-    
-                            // }
-    
                         }
-    
-    
-                        
-                        
                     }
                 }
     
@@ -549,8 +555,14 @@
                     width: 100%;
                     text-align: center;
     
-
-                    &.user{
+                    &.roles{
+                        width: 50%;
+                        margin: auto;
+                        display: flex;
+                        justify-content: space-around;
+                        margin-top: 20px;
+                    }
+                    &.user, &.roles{
                         display: flex;
                         justify-content: space-around;
                     }
@@ -565,7 +577,7 @@
                         text-transform: uppercase;
                         cursor: pointer;
     
-                        &.user{
+                        &.user,&.roles{
                             padding: 14px 34px;
                             margin: 0;
                             font-size: 1.5rem;
@@ -591,8 +603,6 @@
                     }
                 }
             }
-    
-
 
             // &.account-active{
             &.active{
@@ -612,3 +622,22 @@
     }
 
 }
+
+
+// .box-notify__wrapper{
+//     position: fixed;
+//     background-color: rgba($black-color,0.2);
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     display: flex;
+//     justify-content: center;
+//     .box-notify{
+//         width: 400px;
+//         height: 400px;
+//         background-color: #fff;
+//         margin-top: 100px;
+//         border-radius: 10px;
+//     }
+// }

@@ -1,5 +1,5 @@
 <?php 
-
+    $password_old = '';
     if(isset($_GET['ud_user_number'])){
         $update_user =true;
         $user_id = $_GET['ud_user_number'];
@@ -10,6 +10,7 @@
             $username = $update_user_arr[0]['username'];
             $email = $update_user_arr[0]['email'];
             $password = $update_user_arr[0]['password'];
+            $password_old = $update_user_arr[0]['password'];
             $phone = $update_user_arr[0]['phone'];
             $roles = $update_user_arr[0]['roles_name'];
             $country = $update_user_arr[0]['country_name'];
@@ -27,12 +28,18 @@
 
 
         try{
+            
             $password_hash = hash_data($password);
             $result_roles = getdata("select * from roles where roles_name = '".$roles."'");
             $roles = $result_roles[0]['roles_id'];
             $result_country = getdata("SELECT * FROM `country` WHERE country_name='".$country."'");
-            $country = $result_country[0]['abbreviation'];      
-            updateUser($id,$username,$email,$password_hash,$phone,$roles,$country);
+            $country = $result_country[0]['abbreviation']; 
+            if($password === $password_old){
+                updateUser($id,$username,$email,$password_old,$phone,$roles,$country);
+            }     
+            else{
+                updateUser($id,$username,$email,$password_hash,$phone,$roles,$country);
+            }
             header("location: user.php");
         }
         catch(Exception $e){

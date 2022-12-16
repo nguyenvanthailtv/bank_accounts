@@ -29,4 +29,8 @@
             echo "<pre>";
         }
     }
+
+    if(isset($_POST['close'])){
+        header("location: user.php");
+    }
 ?>

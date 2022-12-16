@@ -5,7 +5,7 @@
     $update_user =false;
     $create_user = false;
     $user_err=[];
-    require_once('./assets/php/action.php');
+    require_once('./assets/php/user_data.php');
     require_once('./assets/php/user/create_new_user.php');
     require_once('./assets/php/user/update_user.php');
     require_once('./assets/php/user/delete_user.php');
@@ -23,7 +23,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="./assets/css/main.css?v=<?php echo time(); ?>">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" ></script>
-    
     
     <title>Document</title>
 </head>
@@ -46,37 +45,68 @@
 
             <div class="side-bars__content">
                 <ul class="list-content">
-                    <li class="list-item">
-                        <a class="list-item__link" href="main.php">
+                    <?php 
+                        if(in_array('view_account',$_SESSION['arr_permissions'])){
+                            echo '
+                                <li class="list-item">
+                                    <a class="list-item__link" href="main.php">
+                                        <div class="list-item__link__wrapper">
+                                            <i class="fa-sharp fa fa-pen-to-square"></i>
+                                            <span>Account management</span>
+                                        </div>
+                                    </a>
+                                </li>';
+                        }
+                    ?>
+                    
+
+                    <li class="list-item active">
+                        <a class="list-item__link" href="user.php">
                             <div class="list-item__link__wrapper">
                                 <i class="fa-sharp fa fa-pen-to-square"></i>
-                                <span>Account management</span>
+                                <span class="">User management</span>
                             </div>
+                            <i class="fa fa-chevron-up arrow"></i>
                         </a>
                     </li>
 
-                <?php 
-                    if($login_roles == 'admin'){
-                        echo '                    
-                        <li class="list-item active">
-                            <a class="list-item__link" href="user.php">
-                                <div class="list-item__link__wrapper">
-                                    <i class="fa-sharp fa fa-pen-to-square"></i>
-                                    <span class="">User management</span>
-                                </div>
-                                <i class="fa fa-chevron-up arrow"></i>
-                            </a>
-                        </li>';
-                    }
-                ?>
-
+                    <?php 
+                        if(in_array('view_roles',$_SESSION['arr_permissions'])){
+                            echo '
+                                <li class="list-item">
+                                    <a class="list-item__link" href="roles.php">
+                                        <div class="list-item__link__wrapper">
+                                            <i class="fa-sharp fa fa-pen-to-square"></i>
+                                            <span>Roles management</span>
+                                        </div>
+                                    </a>
+                                </li>';
+                        }
+                    ?>
                     <li class="list-item">
-                        <a href="login.php" class="list-item__link">
+                        <a class="list-item__link" href="permissions.php">
                             <div class="list-item__link__wrapper">
-                                <i class="fa fa-arrow-right-from-bracket"></i>
-                                <span>Log Out</span>
+                                <i class="fa-sharp fa fa-pen-to-square"></i>
+                                <span class="">Permission</span>
                             </div>
                         </a>
+                    </li>
+                        <?php 
+                            if(isset($_POST['logout'])){
+                                session_reset();
+                                header('location: index.php');
+                            }
+                        ?>
+
+                    <li class="list-item">
+                        <form action="" method="post">
+                            <button type="submit" name="logout" class="list-item__link">
+                                <div class="list-item__link__wrapper">
+                                    <i class="fa fa-arrow-right-from-bracket"></i>
+                                    <span>Log Out</span>
+                                </div>
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>
@@ -88,10 +118,17 @@
                 <div class="content__container">
                     <div class="title">
                         <h3>User list</h3>
-                        <div class="create-new-user">
-                            <i class="fa fa-plus"></i>
-                            <p>Create new User</p>
-                        </div>
+                        <?php 
+                            if(in_array('create_roles',$_SESSION['arr_permissions'])){
+                                echo '
+                                    <div class="create-new-user">
+                                        <i class="fa fa-plus"></i>
+                                        <p>Create new User</p>
+                                    </div>';
+                            }
+
+                        ?>
+
                     </div>
                     <table>
                         <thead>
@@ -103,33 +140,46 @@
                                 <th class="password">Password</th>
                                 <th class="roles">roles</th>
                                 <th class="country">Country</th>
-                                <th class="action" colspan="2">Action</th>
+                                <?php 
+                                    if(in_array('update_user',$_SESSION['arr_permissions']) && in_array('delete_user',$_SESSION['arr_permissions'])){
+                                        echo '<th colspan="2" class="action">Action</th>';
+                                    }
+                                    elseif(in_array('update_user',$_SESSION['arr_permissions']) || in_array('delete_user',$_SESSION['arr_permissions'])){
+                                        echo '<th colspan="1" class="action">Action</th>';
+                                    }
+                                ?>
+                                <!-- <th class="action" colspan="2">Action</th> -->
                                 
                             </tr>
                         </thead>
 
                         <tbody>
-                        <?php
-                            connectdb();
-                            $sql = "SELECT id, username,email,phone,password,roles.roles_name,country.country_name FROM users,roles,country WHERE roles.roles_id = users.roles_id and country.abbreviation = users.country";
+                            <?php
+                                connectdb();
+                                $sql = "SELECT id, username,email,phone,password,roles.roles_name,country.country_name FROM users,roles,country WHERE roles.roles_id = users.roles_id and country.abbreviation = users.country order by id ASC";
 
-                            $arr = getdata($sql);
-                            foreach($arr as $row){
+                                $arr = getdata($sql);
+                                foreach($arr as $row){
 
-                                echo "<tr class='row-item'>";
-                                echo "<td class='id'>".$row['id']."</td>";
-                                echo "<td>".$row['username']."</td>";
-                                echo "<td>".$row['email']."</td>";
-                                echo "<td  class='age'>".$row['phone']."</td>";
-                                echo "<td title='".$row['password']."'>".$row['password']."</td>";
-                                echo "<td>".$row['roles_name']."</td>";
-                                echo "<td>".$row['country_name']."</td>";
-                                echo "<td><a href='user.php?ud_user_number=".$row['id']."' class='update-user'><i class='fa fa-file-pen'></i></a></td>";
-                                echo "<td><a href='user.php?dl_user_number=".$row['id']."'><i class='fa fa-trash'></i></a></td>";
-                                echo "</tr>";
-                            }
+                                    echo "<tr class='row-item'>";
+                                    echo "<td class='id'>".$row['id']."</td>";
+                                    echo "<td>".$row['username']."</td>";
+                                    echo "<td>".$row['email']."</td>";
+                                    echo "<td  class='age'>".$row['phone']."</td>";
+                                    echo "<td title='".$row['password']."'>".$row['password']."</td>";
+                                    echo "<td>".$row['roles_name']."</td>";
+                                    echo "<td>".$row['country_name']."</td>";
+                                    if(in_array('update_user',$_SESSION['arr_permissions'])){
+                                        echo "<td><a href='user.php?ud_user_number=".$row['id']."' class='update-user'><i class='fa fa-file-pen'></i></a></td>";
+                                    }
 
-                        ?>
+                                    if(in_array('delete_user',$_SESSION['arr_permissions'])){
+                                        echo "<td><a href='user.php?dl_user_number=".$row['id']."'><i class='fa fa-trash'></i></a></td>";
+                                    }
+                                    echo "</tr>";
+                                }
+
+                            ?>
                         </tbody>
                     </table>
         
@@ -166,7 +216,7 @@
                         <div class="insert-form__content user">
     
                             <!-- username -->
-                            <div class="insert-form__input insert-form__username">
+                            <div class="insert-form__input">
                                 <input type="text" name="username" required autocomplete="off" 
                                     value="<?php if(isset($_POST['create-user']) && !empty($username)) echo $username;
                                                 if(!empty($_GET['ud_user_number'])) echo $username;?>">
@@ -183,7 +233,7 @@
                             </div>
     
                             <!-- password -->
-                            <div class="insert-form__input insert-form__password">
+                            <div class="insert-form__input">
                                 <input type="password" name="password" required autocomplete="off" 
                                     value="<?php if(isset($_POST['create-user']) && !empty($password)) echo $password; 
                                                  if(!empty($_GET['ud_user_number'])) echo $password; ?>">
@@ -202,7 +252,7 @@
                             </div>
     
                             <!-- phone -->
-                            <div class="insert-form__input insert-form__phone">
+                            <div class="insert-form__input">
                                 <input type="text" name="phone" required autocomplete="off" 
                                     value="<?php if(isset($_POST['create-user']) && !empty($phone)) echo $phone; 
                                                 if(!empty($_GET['ud_user_number'])) echo $phone; ?>">
@@ -219,7 +269,7 @@
                             </div>
     
                             <!-- roles -->
-                            <div class="insert-form__input insert-form__roles">
+                            <div class="insert-form__input insert-fonm__list">
                                 <input type="hidden" class="input--hidden" name="roles" 
                                     value="<?php if(isset($_POST['create-user']) && !empty($roles)) echo $roles; 
                                                 if(!empty($_GET['ud_user_number'])) echo $roles; ?>">
@@ -254,7 +304,7 @@
                             </div>
 
                             <!-- country -->
-                            <div class="insert-form__input insert-form__Country">
+                            <div class="insert-form__input insert-fonm__list">
                                 <input type="hidden" class="input--hidden " name="country" readonly="false" 
                                     value="<?php if(isset($_POST['create-user']) && !empty($country)) echo $country; 
                                                 if(!empty($_GET['ud_user_number'])) echo $country; ?>">
@@ -289,7 +339,7 @@
                             </div>
 
                             <!-- email -->
-                            <div class="insert-form__input insert-form__email">
+                            <div class="insert-form__input">
                                 <input type="email" name="email" required autocomplete="off" 
                                     value="<?php if(isset($_POST['create-user']) && !empty($email)) echo $email; 
                                                 if(!empty($_GET['ud_user_number'])) echo $email; ?>">
@@ -327,6 +377,6 @@
             </div>
         </div>
 
-    <script src="./assets/js/style.js?v=<?php echo time(); ?>"></script>
+    <script src="./assets/js/user/user_style.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

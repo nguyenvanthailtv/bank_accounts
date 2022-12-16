@@ -22,7 +22,7 @@
             $stmt->execute();
             $conn = null;
         }catch(Exception $e){
-            echo "Message: add account failed " ;
+            die("<script>alert('Message: add account failed!')</script>");
         }
     }
 
@@ -47,7 +47,7 @@
             $stmt->execute();
             $conn = null;
         } catch (Exception $e) {
-            echo "Message: update account failed " ;
+            die("<script>alert('Message: update account failed!')</script>");
         }
     }
 
@@ -62,7 +62,7 @@
             $stmt->execute();
             $conn = null;
         } catch (Exception $e) {
-            echo "Message: delete account failed " ;
+            die("<script>alert('Message: delete account failed!')</script>") ;
         }
     }
 
@@ -84,7 +84,7 @@
             $stmt->execute();
             $conn = null;
         } catch (Exception $e) {
-            echo "Message: add user failed " ;
+            die("<script>alert('Message: add user failed!')</script>");
         }
     }
 
@@ -105,7 +105,7 @@
             $stmt->execute();
             $conn = null;
         } catch (Exception $e) {
-            echo "Message: update user failed " ;
+            die("<script>alert('Message: update user failed!')</script>");
         }
     }
 
@@ -117,9 +117,111 @@
             $stmt->execute();
             $conn=null;
         } catch (Exception $e) {
-            echo "Message: delete user failed " ;
+            die("<script>alert('Message: delete user failed!')</script>");
         }
     }
+
+
+    function insertRoles($roles_name,$roles_desc){
+        try {
+            $conn  = connectdb();
+            $result_id = getdata("select max(roles_id) from roles;");
+            $id = $result_id[0]['max(roles_id)'] + 1;
+            $sql  = "insert into roles(roles_id,roles_name,roles_description) values(:id,:roles_name,:roles_description);";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':id',$id);
+            $stmt->bindParam(':roles_name',$roles_name);
+            $stmt->bindParam(':roles_description',$roles_desc);
+            $stmt->execute();
+            $conn = null;
+        } catch (Exception $e) {
+            die("<script>alert('Message: add roles failed!')</script>");
+        }  
+    }
+
+    function insertRoles_Permissions($permission_id){
+        try {
+            $conn  = connectdb();
+
+            $result_id = getdata("select max(id) from roles_permissions;");
+            $id = $result_id[0]['max(id)'] + 1;
+
+            $result_id = getdata("select max(roles_id) from roles;");
+            $roles_id = $result_id[0]['max(roles_id)'];
+
+            $sql  = "insert into roles_permissions(id,roles_id,permission_id) values(:id,:roles_id,:permission_id);";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':id',$id);
+            $stmt->bindParam(':roles_id',$roles_id);
+            $stmt->bindParam(':permission_id',$permission_id);
+            $stmt->execute();
+            $conn = null;
+        } catch (Exception $e) {
+            die("<script>alert('Message: add roles failed!')</script>");
+        }  
+    }
+
+    function updateRoles($roles_id,$roles_name,$roles_description){
+        try {
+            $conn  = connectdb();
+            $sql  = "update roles set roles_name = :roles_name, roles_description =:roles_description where roles_id=:roles_id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':roles_id',$roles_id);
+            $stmt->bindParam(':roles_name',$roles_name);
+            $stmt->bindParam(':roles_description',$roles_description);
+            $stmt->execute();
+            $conn = null;
+        } catch (Exception $e) {
+            die("<script>alert('Message: update roles failed!')</script>");
+        }  
+    }
+
+    function insertRoles_Permissions2($roles_id,$permission_id){
+        try {
+            $conn  = connectdb();
+
+            $result_id = getdata("select max(id) from roles_permissions;");
+            $id = $result_id[0]['max(id)'] + 1;
+
+            $sql  = "insert into roles_permissions(id,roles_id,permission_id) values(:id,:roles_id,:permission_id);";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':id',$id);
+            $stmt->bindParam(':roles_id',$roles_id);
+            $stmt->bindParam(':permission_id',$permission_id);
+            $stmt->execute();
+            $conn = null;
+        } catch (Exception $e) {
+            die("<script>alert('Message: add roles failed!')</script>");
+        }  
+    }
+
+    function deletetRoles($roles_id){
+        try {
+            $conn  = connectdb();
+            $sql  = "delete from roles where roles_id =:roles_id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':roles_id',$roles_id);
+            $stmt->execute();
+            $conn = null;
+        } catch (Exception $e) {
+            die("<script>alert('Message: remove roles failed!')</script>");
+        }  
+    }
+
+    function deleteRoles_Permissions($roles_id){
+        try {
+            $conn  = connectdb();
+
+            $sql  = "delete from roles_permissions where roles_id =:roles_id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':roles_id',$roles_id);
+            $stmt->execute();
+            $conn = null;
+        } catch (Exception $e) {
+            die("<script>alert('Message: remove roles failed!')</script>");
+        }  
+    }
+
 
     function getdata($sql){
         try{
@@ -130,7 +232,7 @@
             return $arr;
         }
         catch(Exception $e){
-            echo "Message: An error occurred. Please try again later! " ;
+            die("<script>alert('Message: An error occurred. Please try again later!')</script>");
         }
 
     }

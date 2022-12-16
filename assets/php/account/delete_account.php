@@ -7,8 +7,7 @@
             header('location: main.php');
         }
         catch(Exception $e){
-            echo "Message: An error occurred. Please try again later! " ;
-            echo "<pre>";
+            die("<script>alert('Message: Message: An error occurred. Please try again later!')</script>");
         }
 
     }

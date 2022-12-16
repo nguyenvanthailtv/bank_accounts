@@ -21,13 +21,12 @@
                 $returl = getdata("SELECT * FROM `states` WHERE name ='".$state."'");
                 $state = $returl[0]['abbreviation'];
                 insertAccounts($firstname,$lastname,$age,$gender,$email,$balance,$address,$city,$state,$employer);
-                
                 header('location: main.php');
+
             }
         }
         catch(Exception $e){
-            echo "Message: An error occurred. Please try again later! " ;
-            echo "<pre>";
+            die("<script>alert('Message: Message: An error occurred. Please try again later!')</script>");
         }
     }
 

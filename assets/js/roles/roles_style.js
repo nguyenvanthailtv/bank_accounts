@@ -1,19 +1,19 @@
-
-$(document).ready(function(){
-
-
-    // create account
-    $('.create-new').click(function() {
-        $('.account-impacts').addClass('active');
+$(document).ready(function() {
+    console.log('aaaaa');
+    // create roles
+    $('.create-new-roles').click(function() {
+        $('.roles-impacts').addClass('active');
     })
 
-    // // update account
-    $('.update-account').click(function() {
-        $('.account-impacts').addClass('active');
+    // update roles
+    $('.update-roles').click(function() {
+        $('.roles-impacts').addClass('active');
     })
 
+    $('.btn--close').click(function(){
+        $('.roles-impacts').removeClass('active');
+    })
 
-    // combobox state vs gender 
     const listForminput = document.querySelectorAll('.insert-form__input');
     listForminput.forEach((input)=>{
         var label = $(input).find('.label');
@@ -41,37 +41,6 @@ $(document).ready(function(){
             
         })
     })
-
-
-
-    // create user
-    $('.create-new-user').click(function() {
-        $('.user-impacts').addClass('active');
-    })
-
-    // update user
-    $('.update-user').click(function() {
-        $('.user-impacts').addClass('active');
-    })
-
-
-    // create roles
-    $('.create-new-roles').click(function() {
-        $('.roles-impacts').addClass('active');
-    })
-
-    // update roles
-    $('.update-roles').click(function() {
-        $('.roles-impacts').addClass('active');
-    })
-
-    $('.btn--close').click(function(){
-        $('.user-impacts').removeClass('active');
-        $('.account-impacts').removeClass('active');
-        $('.roles-impacts').removeClass('active');
-    })
-
-    
 })
 
 

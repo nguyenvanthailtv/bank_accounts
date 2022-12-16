@@ -3,16 +3,12 @@
     require_once('./assets/php/connect.php');
     require_once('./assets/php/function.php');
     $_SESSION['active'] ='';
-    $update_account =false;
-    $create_account =false;
     $account_err=[];
     $login_roles = '';
     $login_username='';
-    $isCreate = false;
-    $isUpdate = false;
-    $isDelete = false;
+    $_SESSION['arr_permissions'] = array();
 
-    require_once('./assets/php/action.php');
+    require_once('./assets/php/user_data.php');
     require_once('./assets/php/account/create_new_account.php');
     require_once('./assets/php/account/update_account.php');
     require_once('./assets/php/account/delete_account.php');
@@ -63,28 +59,58 @@
                         </a>
                     </li>
 
-                <?php 
-                    if($login_roles == 'admin'){
-                        echo '                    
-                        <li class="list-item">
-                            <a class="list-item__link" href="user.php">
-                                <div class="list-item__link__wrapper">
-                                    <i class="fa-sharp fa fa-pen-to-square"></i>
-                                    <span class="">User management</span>
-                                </div>
-                            </a>
-                        </li>';
-                    }
-                ?>
-
+                    <?php 
+                        if(in_array('view_user',$_SESSION['arr_permissions'])){
+                            echo '                    
+                            <li class="list-item">
+                                <a class="list-item__link" href="user.php">
+                                    <div class="list-item__link__wrapper">
+                                        <i class="fa-sharp fa fa-pen-to-square"></i>
+                                        <span class="">User management</span>
+                                    </div>
+                                </a>
+                            </li>';
+                        }
+                    ?>
+                    <?php 
+                        if(in_array('view_roles',$_SESSION['arr_permissions'])){
+                            echo '                    
+                            <li class="list-item">
+                                <a class="list-item__link" href="roles.php">
+                                    <div class="list-item__link__wrapper">
+                                        <i class="fa-sharp fa fa-pen-to-square"></i>
+                                        <span class="">Roles management</span>
+                                    </div>
+                                </a>
+                            </li>';
+                        }
+                    ?>
                     <li class="list-item">
-                        <a href="login.php" class="list-item__link">
+                        <a class="list-item__link" href="permissions.php">
                             <div class="list-item__link__wrapper">
-                                <i class="fa fa-arrow-right-from-bracket"></i>
-                                <span>Log Out</span>
+                                <i class="fa-sharp fa fa-pen-to-square"></i>
+                                <span class="">Permission</span>
                             </div>
                         </a>
                     </li>
+                        
+                        <?php 
+                            if(isset($_POST['logout'])){
+                                session_reset();
+                                header('location: index.php');
+                            }
+                        ?>
+                    <li class="list-item">
+                        <form action="" method="post">
+                            <button type="submit" name="logout" class="list-item__link">
+                                <div class="list-item__link__wrapper">
+                                    <i class="fa fa-arrow-right-from-bracket"></i>
+                                    <span>Log Out</span>
+                                </div>
+                            </button>
+                        </form>
+                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -107,12 +133,12 @@
                         <h3>Account list</h3>
 
                         <?php 
-                            if(!empty($isCreate)){
-                                echo '                    
-                                    <div class="create-new">
-                                        <i class="fa fa-plus"></i>
-                                        <p>Create new account</p>
-                                    </div>';
+                        if(in_array('create_account',$_SESSION['arr_permissions'])){
+                            echo '                    
+                                <div class="create-new">
+                                    <i class="fa fa-plus"></i>
+                                    <p>Create new account</p>
+                                </div>';
                             }
                         ?>
                        
@@ -129,10 +155,14 @@
                                 <th class="emloyer">Employer</th>
                                 <th class="email">Email</th>
                                 <?php 
-                                    if($login_roles == 'admin'){
-                                        echo '<th colspan="2">Action</th>';
+                                    if(in_array('update_account',$_SESSION['arr_permissions']) && in_array('delete_account',$_SESSION['arr_permissions'])){
+                                        echo '<th colspan="2" class="account-action">Action</th>';
+                                    }
+                                    elseif(in_array('update_account',$_SESSION['arr_permissions']) || in_array('delete_account',$_SESSION['arr_permissions'])){
+                                        echo '<th colspan="1" class="roles-action">Action</th>';
                                     }
                                 ?>
+
                             </tr>
                         </thead>
     
@@ -176,8 +206,10 @@
                                 echo "<td title='".$row['address'].'-'.$row['city'].'-'.$row['name']."'>".$row['address'].'-'.$row['city'].'-'.$row['name']."</td>";
                                 echo "<td>".$row['employer']."</td>";
                                 echo "<td title='".$row['email']."'>".$row['email']."</td>";
-                                if($login_roles == 'admin'){
+                                if(in_array('update_account',$_SESSION['arr_permissions'])){
                                     echo "<td><a href='main.php?ud_account_number=".$row['account_number']."' class='update-account'><i class='fa fa-file-pen'></i></a></td>";
+                                }
+                                if(in_array('create_account',$_SESSION['arr_permissions'])){
                                     echo "<td><a href='main.php?dl_account_number=".$row['account_number']."'><i class='fa fa-trash'></i></a></td>";
                                 }
                                 echo "</tr>";
